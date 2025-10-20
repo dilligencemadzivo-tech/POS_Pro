@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Packages | African Royalty Safaris</title>
+  <meta name="description"
+    content="Discover our luxury safari packages in Tanzania. From wildlife adventures to Kilimanjaro climbs and Zanzibar escapes.">
+  <link rel="icon" type="image/png" href="img/logo.png" />
+  <link rel="apple-touch-icon" href="img/logo.png" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/tooplate-style.css" />
+  <style>
+    :root {
+      --primary-color: #3c8d0d;
+      --secondary-color: #d6a600;
+      --dark-color: #1a2f0f;
+      --light-color: #f4f4f4;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--light-color);
+      margin: 0;
+      padding: 0;
+      color: #333;
+      font-size: 18px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .tm-top-contact {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .navbar {
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 1rem 2rem;
+    }
+
+    .navbar-brand {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: var(--dark-color) !important;
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-nav .nav-link {
+      color: #333 !important;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: var(--primary-color) !important;
+    }
+
+    .navbar-nav .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--primary-color);
+      transition: width 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .navbar-nav .nav-item.active .nav-link {
+      color: var(--primary-color) !important;
+    }
+
+    .navbar-nav .nav-item.active .nav-link::after {
+      width: 100%;
+    }
+
+    .page-header {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/packages-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 100px 0 60px;
+      text-align: center;
+    }
+
+    .package-section {
+      padding: 60px 0;
+      max-width: 1140px;
+      margin: auto;
+    }
+
+    .section-title {
+      position: relative;
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 3px;
+      background-color: var(--secondary-color);
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .package-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      margin-bottom: 30px;
+      transition: all 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .package-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .package-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      z-index: 2;
+    }
+
+    .package-img-container {
+      position: relative;
+      overflow: hidden;
+      height: 120px;
+      background-color: var(--primary-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .package-icon {
+      font-size: 50px;
+      color: white;
+    }
+
+    .package-content {
+      padding: 25px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .package-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--dark-color);
+      margin-bottom: 10px;
+    }
+
+    .package-price {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--secondary-color);
+      margin-bottom: 15px;
+    }
+
+    .package-duration {
+      color: #777;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .package-desc {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: #555;
+      flex-grow: 1;
+    }
+
+    .package-features {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 25px;
+    }
+
+    .package-features li {
+      padding: 5px 0;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .package-features li:before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      border: none;
+      padding: 12px 25px;
+      border-radius: 6px;
+      color: white;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      margin-top: auto;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--dark-color);
+      color: white;
+      text-decoration: none;
+      transform: translateY(-2px);
+    }
+
+    .package-category {
+      margin-bottom: 50px;
+    }
+
+    .category-title {
+      color: var(--dark-color);
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid var(--secondary-color);
+    }
+
+    .filter-buttons {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .filter-btn {
+      background: white;
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+      padding: 8px 20px;
+      margin: 0 5px 10px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--primary-color);
+      color: white;
+    }
+
+    .package-cta {
+      background: linear-gradient(rgba(60, 141, 13, 0.9), rgba(60, 141, 13, 0.9)), url('img/cta-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+      margin-top: 50px;
+      border-radius: 10px;
+    }
+
+    .package-cta h2 {
+      margin-bottom: 20px;
+    }
+
+    .package-cta p {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      font-size: 1.1rem;
+    }
+
+    .btn-outline-light {
+      border-width: 2px;
+      padding: 12px 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline-light:hover {
+      background-color: white;
+      color: var(--primary-color);
+      transform: translateY(-2px);
+    }
+
+    .footer {
+      background-color: var(--dark-color);
+      color: white;
+      padding: 50px 0 20px;
+      margin-top: 80px;
+    }
+
+    .footer h5 {
+      color: var(--secondary-color);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      margin-right: 10px;
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      background-color: var(--primary-color);
+      transform: translateY(-5px);
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 20px;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    /* Package grid improvements */
+    .package-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+    }
+
+    .package-category {
+      margin-bottom: 70px;
+    }
+
+    .category-divider {
+      height: 2px;
+      background: linear-gradient(to right, transparent, var(--secondary-color), transparent);
+      margin: 40px 0;
+    }
+
+    /* No results message */
+    .no-results {
+      text-align: center;
+      padding: 40px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      grid-column: 1 / -1;
+    }
+
+    /* ========== RESPONSIVE STYLES ========== */
+
+    /* Large devices (desktops, 992px and up) */
+    @media (max-width: 1199px) {
+      .package-grid {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      }
+    }
+
+    /* Medium devices (tablets, 768px to 991px) */
+    @media (max-width: 991px) {
+      .package-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+      }
+
+      .package-section {
+        padding: 50px 15px;
+      }
+
+      .page-header {
+        padding: 80px 0 50px;
+      }
+
+      .page-header h1 {
+        font-size: 2.8rem;
+      }
+
+      .navbar {
+        padding: 1rem;
+      }
+
+      .tm-top-contact {
+        font-size: 18px;
+        padding: 8px 0;
+      }
+
+      .package-cta {
+        padding: 60px 0;
+      }
+    }
+
+    /* Small devices (landscape phones, 576px to 767px) */
+    @media (max-width: 767px) {
+      .package-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .page-header h1 {
+        font-size: 2.2rem;
+      }
+
+      .page-header p {
+        font-size: 1rem;
+        padding: 0 15px;
+      }
+
+      .filter-btn {
+        padding: 6px 15px;
+        font-size: 14px;
+        margin: 0 3px 8px;
+      }
+
+      .package-card {
+        margin-bottom: 20px;
+      }
+
+      .package-content {
+        padding: 20px;
+      }
+
+      .package-title {
+        font-size: 20px;
+      }
+
+      .package-price {
+        font-size: 18px;
+      }
+
+      .package-desc {
+        font-size: 15px;
+      }
+
+      .package-cta {
+        padding: 50px 20px;
+        margin-top: 30px;
+      }
+
+      .package-cta h2 {
+        font-size: 1.8rem;
+      }
+
+      .footer {
+        padding: 40px 0 20px;
+        margin-top: 60px;
+      }
+
+      .footer .col-md-4,
+      .footer .col-md-2,
+      .footer .col-md-3 {
+        margin-bottom: 30px;
+      }
+    }
+
+    /* Extra small devices (portrait phones, less than 576px) */
+    @media (max-width: 575px) {
+      body {
+        font-size: 16px;
+      }
+
+      .page-header {
+        padding: 60px 0 40px;
+      }
+
+      .page-header h1 {
+        font-size: 1.8rem;
+      }
+
+      .package-section {
+        padding: 40px 10px;
+      }
+
+      .category-title {
+        font-size: 1.5rem;
+      }
+
+      .filter-buttons {
+        margin-bottom: 30px;
+      }
+
+      .filter-btn {
+        display: block;
+        width: 100%;
+        margin: 0 0 10px 0;
+        padding: 10px 15px;
+      }
+
+      .package-img-container {
+        height: 100px;
+      }
+
+      .package-icon {
+        font-size: 40px;
+      }
+
+      .package-content {
+        padding: 15px;
+      }
+
+      .package-title {
+        font-size: 18px;
+      }
+
+      .package-price {
+        font-size: 16px;
+      }
+
+      .package-duration {
+        font-size: 14px;
+      }
+
+      .package-desc {
+        font-size: 14px;
+      }
+
+      .package-features li {
+        font-size: 14px;
+      }
+
+      .btn-primary {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+
+      .btn-outline-light {
+        padding: 10px 25px;
+      }
+
+      .tm-top-contact {
+        font-size: 16px;
+        padding: 6px 0;
+      }
+
+      .navbar-brand {
+        font-size: 1rem;
+      }
+
+      .navbar-brand img {
+        height: 40px;
+      }
+
+      .copyright p {
+        font-size: 14px;
+      }
+
+      .social-icons a {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        margin-right: 8px;
+      }
+    }
+
+    /* Very small devices (less than 400px) */
+    @media (max-width: 400px) {
+      .package-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .page-header h1 {
+        font-size: 1.6rem;
+      }
+
+      .package-title {
+        font-size: 17px;
+      }
+
+      .package-content {
+        padding: 12px;
+      }
+
+      .package-cta {
+        padding: 40px 15px;
+      }
+
+      .package-cta h2 {
+        font-size: 1.5rem;
+      }
+
+      .package-cta p {
+        font-size: 1rem;
+      }
+    }
+
+    /* High-resolution displays */
+    @media (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+      .page-header {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/packages-bg@2x.jpg');
+      }
+
+      .package-cta {
+        background-image: linear-gradient(rgba(60, 141, 13, 0.9), rgba(60, 141, 13, 0.9)), url('img/cta-bg@2x.jpg');
+      }
+    }
+
+    /* Print styles */
+    @media print {
+
+      .navbar,
+      .filter-buttons,
+      .package-cta,
+      .footer,
+      .btn-primary {
+        display: none;
+      }
+
+      .package-card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        page-break-inside: avoid;
+      }
+
+      .page-header {
+        background: none;
+        color: black;
+        padding: 20px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top Contact Info -->
+  <div class="tm-top-contact">
+    📞 +255 699 179 046 | ✉ africanroyaltysafaris@gmail.com
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light tm-bg-white-shadow">
+    <a class="navbar-brand" href="index.html">
+      <img src="img/logo.png" alt="African Royalty Safaris Logo" style="height: 50px;" />
+      African Royalty Safaris
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="kilimanjaro.html">Kilimanjaro</a></li>
+        <li class="nav-item"><a class="nav-link" href="zanzibar.html">Zanzibar</a></li>
+        <li class="nav-item"><a class="nav-link" href="Destination.html">Destination</a></li>
+        <li class="nav-item active"><a class="nav-link" href="packages.html">Packages</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1>Our Safari Packages</h1>
+      <p>Discover tailor-made safari experiences for every adventurer. Choose your dream package below!</p>
+    </div>
+  </header>
+
+  <!-- Package Filter -->
+  <div class="container mt-5">
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">All Packages</button>
+      <button class="filter-btn" data-filter="safari">Safari Tours</button>
+      <button class="filter-btn" data-filter="kilimanjaro">Kilimanjaro</button>
+      <button class="filter-btn" data-filter="zanzibar">Zanzibar</button>
+      <button class="filter-btn" data-filter="luxury">Luxury</button>
+      <button class="filter-btn" data-filter="budget">Budget</button>
+    </div>
+  </div>
+
+  <!-- Packages List -->
+  <section class="package-section container">
+    <!-- Safari Tours -->
+    <div class="package-category">
+      <h2 class="category-title">Safari Tours</h2>
+      <div class="package-grid">
+        <!-- Package 1 -->
+        <div class="package-card" data-category="safari luxury">
+          <div class="package-img-container">
+            <span class="package-badge">Popular</span>
+            <div class="package-icon">🦁</div>
+          </div>
+          <div class="package-content">
+            <h3 class="package-title">10-Day Tanzania Overland Safari Adventure</h3>
+            <p class="package-price">From $2580</p>
+            <p class="package-duration">10 Days / 9 Nights</p>
+            <p class="package-desc">Explore Tanzania's breathtaking landscapes and wildlife over 10 unforgettable
+              days. Perfect for adventure seekers who want a comprehensive safari experience.</p>
+            <ul class="package-features">
+              <li>Serengeti National Park</li>
+              <li>Ngorongoro Crater</li>
+              <li>Tarangire National Park</li>
+              <li>Luxury Accommodation</li>
+              <li>Expert Guides</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+
+        <!-- Package 2 -->
+        <div class="package-card" data-category="safari">
+          <div class="package-img-container">
+            <div class="package-icon">🐘</div>
+          </div>
+          <div class="package-content">
+            <h3 class="package-title">5-Days Mid-Range Safari In Tanzania</h3>
+            <p class="package-price">From $880</p>
+            <p class="package-duration">5 Days / 4 Nights</p>
+            <p class="package-desc">Enjoy a 5-day mid-range safari exploring Tanzania's iconic parks with comfortable
+              accommodation and expert guides.</p>
+            <ul class="package-features">
+              <li>Serengeti National Park</li>
+              <li>Ngorongoro Crater</li>
+              <li>Lake Manyara</li>
+              <li>Comfortable Lodges</li>
+              <li>Professional Driver Guide</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+
+        <!-- Package 3 -->
+        <div class="package-card" data-category="safari budget">
+          <div class="package-img-container">
+            <div class="package-icon">🦒</div>
+          </div>
+          <div class="package-content">
+            <h3 class="package-title">3-Days Mid-Range Safari In Tanzania</h3>
+            <p class="package-price">From $750</p>
+            <p class="package-duration">3 Days / 2 Nights</p>
+            <p class="package-desc">A short but exciting 3-day safari option perfect for travelers with limited time
+              but big dreams.</p>
+            <ul class="package-features">
+              <li>Tarangire National Park</li>
+              <li>Lake Manyara</li>
+              <li>Ngorongoro Conservation Area</li>
+              <li>Mid-Range Accommodation</li>
+              <li>All Meals Included</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+
+        <!-- New Safari Package 1 -->
+        <div class="package-card" data-category="safari luxury">
+          <div class="package-img-container">
+            <span class="package-badge">Luxury</span>
+            <div class="package-icon">🌅</div>
+          </div>
+          <div class="package-content">
+            <h3 class="package-title">7-Day Great Migration Safari</h3>
+            <p class="package-price">From $3200</p>
+            <p class="package-duration">7 Days / 6 Nights</p>
+            <p class="package-desc">Witness one of nature's greatest spectacles - the Great Wildebeest Migration in
+              Serengeti.</p>
+            <ul class="package-features">
+              <li>Exclusive Migration Viewing</li>
+              <li>Luxury Tented Camps</li>
+              <li>Hot Air Balloon Safari</li>
+              <li>Private Guide</li>
+              <li>Gourmet Dining</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+
+        <!-- New Safari Package 2 -->
+        <div class="package-card" data-category="safari budget">
+          <div class="package-img-container">
+            <span class="package-badge">Budget</span>
+            <div class="package-icon">⛺</div>
+          </div>
+          <div class="package-content">
+            <h3 class="package-title">6-Day Northern Circuit Camping Safari</h3>
+            <p class="package-price">From $650</p>
+            <p class="package-duration">6 Days / 5 Nights</p>
+            <p class="package-desc">Experience the wilderness up close with our authentic camping safari adventure.
+            </p>
+            <ul class="package-features">
+              <li>Camping in National Parks</li>
+              <li>All Camping Equipment</li>
+              <li>Professional Cook</li>
+              <li>Serengeti & Ngorongoro</li>
+              <li>Budget-Friendly</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+
+        <!-- New Safari Package 3 -->
+        <div class="package-card" data-category="safari luxury">
+          <div class="package-img-container">
+            <span class="package-badge">Exclusive</span>
+            <div class="package-icon">📸</div>
+          </div>
+          <div class="package-content">
+            <h3 class="package-title">8-Day Photography Safari</h3>
+            <p class="package-price">From $2850</p>
+            <p class="package-duration">8 Days / 7 Nights</p>
+            <p class="package-desc">Perfect for photography enthusiasts with special access and expert guidance for
+              capturing Tanzania's wildlife.</p>
+            <ul class="package-features">
+              <li>Professional Photography Guide</li>
+              <li>Special Photo Permits</li>
+              <li>Golden Hour Game Drives</li>
+              <li>Editing Workshops</li>
+              <li>Small Group Size</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+
+        <!-- New Safari Package 4 -->
+        <div class="package-card" data-category="safari">
+          <div class="package-img-container">
+            <div class="package-icon">🐆</div>
+          </div>
+          <div class="package-content">
+            <h3 class="package-title">4-Day Southern Circuit Safari</h3>
+            <p class="package-price">From $920</p>
+            <p class="package-duration">4 Days / 3 Nights</p>
+            <p class="package-desc">Explore Tanzania's less crowded southern parks with diverse wildlife and stunning
+              landscapes.</p>
+            <ul class="package-features">
+              <li>Selous Game Reserve</li>
+              <li>Ruaha National Park</li>
+              <li>Boat Safari on Rufiji River</li>
+              <li>Walking Safari Option</li>
+              <li>Mid-Range Lodges</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category-divider"></div>
+
+    <!-- Kilimanjaro Packages -->
+    <div class="package-category">
+      <h2 class="category-title">Kilimanjaro Adventures</h2>
+      <div class="package-grid">
+        <!-- Package 4 -->
+        <div class="package-card" data-category="kilimanjaro">
+          <div class="package-img-container">
+            <div class="package-icon">⛰️</div>
+          </div>
+          <div class="package-content">
+            <h3 class="package-title">5-Days Rongai Route</h3>
+            <p class="package-price">From $250</p>
+            <p class="package-duration">5 Days / 4 Nights</p>
+            <p class="package-desc">Trek the scenic Rongai Route to Mount Kilimanjaro summit with expert guides.</p>
+            <ul class="package-features">
+              <li>Rongai Route Ascent</li>
+              <li>Experienced Mountain Guides</li>
+              <li>All Park Fees Included</li>
+              <li>Mountain Crew</li>
+              <li>Accommodation & Meals</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+
+        <!-- New Kilimanjaro Package 1 -->
+        <div class="package-card" data-category="kilimanjaro luxury">
+          <div class="package-img-container">
+            <span class="package-badge">Premium</span>
+            <div class="package-icon">🏔️</div>
+          </div>
+          <div class="package-content">
+            <h3 class="package-title">7-Day Machame Route</h3>
+            <p class="package-price">From $1850</p>
+            <p class="package-duration">7 Days / 6 Nights</p>
+            <p class="package-desc">Conquer Kilimanjaro via the scenic Machame Route with our premium climbing
+              experience.</p>
+            <ul class="package-features">
+              <li>Machame "Whiskey" Route</li>
+              <li>High Success Rate</li>
+              <li>Quality Equipment</li>
+              <li>Extra Oxygen & Medical Kit</li>
+              <li>Summit Certificate</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+
+        <!-- New Kilimanjaro Package 2 -->
+        <div class="package-card" data-category="kilimanjaro">
+          <div class="package-img-container">
+            <div class="package-icon">🥾</div>
+          </div>
+          <div class="package-content">
+            <h3 class="package-title">8-Day Lemosho Route</h3>
+            <p class="package-price">From $2100</p>
+            <p class="package-duration">8 Days / 7 Nights</p>
+            <p class="package-desc">The most scenic route up Kilimanjaro with high acclimatization success rates.</p>
+            <ul class="package-features">
+              <li>Lemosho Route Ascent</li>
+              <li>Best Acclimatization</li>
+              <li>Small Group Size</li>
+              <li>Western Breach Option</li>
+              <li>Pre-Climb Briefing</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+
+        <!-- New Kilimanjaro Package 3 -->
+        <div class="package-card" data-category="kilimanjaro budget">
+          <div class="package-img-container">
+            <span class="package-badge">Budget</span>
+            <div class="package-icon">🧗</div>
+          </div>
+          <div class="package-content">
+            <h3 class="package-title">6-Day Marangu Route</h3>
+            <p class="package-price">From $1350</p>
+            <p class="package-duration">6 Days / 5 Nights</p>
+            <p class="package-desc">The "Coca-Cola" route with hut accommodation, perfect for budget-conscious climbers.
+            </p>
+            <ul class="package-features">
+              <li>Marangu Route Ascent</li>
+              <li>Mountain Hut Accommodation</li>
+              <li>Experienced Guides</li>
+              <li>All Meals Included</li>
+              <li>Park Fees & Transfers</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+
+        <!-- New Kilimanjaro Package 4 -->
+        <div class="package-card" data-category="kilimanjaro luxury">
+          <div class="package-img-container">
+            <span class="package-badge">Luxury</span>
+            <div class="package-icon">🌟</div>
+          </div>
+          <div class="package-content">
+            <h3 class="package-title">9-Day Northern Circuit</h3>
+            <p class="package-price">From $2950</p>
+            <p class="package-duration">9 Days / 8 Nights</p>
+            <p class="package-desc">The longest route with the highest success rate and spectacular scenery throughout.
+            </p>
+            <ul class="package-features">
+              <li>Northern Circuit Route</li>
+              <li>Highest Success Rate</li>
+              <li>Private Toilet Tents</li>
+              <li>Luxury Dining Setup</li>
+              <li>Extra Acclimatization Day</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category-divider"></div>
+
+    <!-- Zanzibar Packages -->
+    <div class="package-category">
+      <h2 class="category-title">Zanzibar Escapes</h2>
+      <div class="package-grid">
+        <!-- Package 5 -->
+        <div class="package-card" data-category="zanzibar">
+          <div class="package-img-container">
+            <div class="package-icon">🏛️</div>
+          </div>
+          <div class="package-content">
+            <h3 class="package-title">Stone Town Tours</h3>
+            <p class="package-price">From $129</p>
+            <p class="package-duration">1 Day</p>
+            <p class="package-desc">Explore the rich history and culture of Stone Town, Zanzibar's historic heart.</p>
+            <ul class="package-features">
+              <li>Historic Stone Town Tour</li>
+              <li>Spice Market Visit</li>
+              <li>Forodhani Gardens</li>
+              <li>Local Guide</li>
+              <li>Lunch Included</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+
+        <!-- Package 6 -->
+        <div class="package-card" data-category="zanzibar luxury">
+          <div class="package-img-container">
+            <span class="package-badge">Luxury</span>
+            <div class="package-icon">🏖️</div>
+          </div>
+          <div class="package-content">
+            <h3 class="package-title">7-Days Zanzibar Beach Staying Holiday</h3>
+            <p class="package-price">From $1029</p>
+            <p class="package-duration">7 Days / 6 Nights</p>
+            <p class="package-desc">Relax on the stunning beaches of Zanzibar in this luxurious 7-day beach holiday.
+            </p>
+            <ul class="package-features">
+              <li>Beachfront Resort</li>
+              <li>All Meals Included</li>
+              <li>Spa Treatments</li>
+              <li>Water Sports</li>
+              <li>Island Tours</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+
+        <!-- New Zanzibar Package 1 -->
+        <div class="package-card" data-category="zanzibar">
+          <div class="package-img-container">
+            <div class="package-icon">🌶️</div>
+          </div>
+          <div class="package-content">
+            <h3 class="package-title">4-Day Zanzibar Spice & Beach Experience</h3>
+            <p class="package-price">From $450</p>
+            <p class="package-duration">4 Days / 3 Nights</p>
+            <p class="package-desc">Immerse yourself in Zanzibar's spice heritage and beautiful beaches.</p>
+            <ul class="package-features">
+              <li>Spice Plantation Tour</li>
+              <li>Prison Island Excursion</li>
+              <li>Beach Accommodation</li>
+              <li>Traditional Cooking Class</li>
+              <li>Snorkeling Trip</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+
+        <!-- New Zanzibar Package 2 -->
+        <div class="package-card" data-category="zanzibar luxury">
+          <div class="package-img-container">
+            <span class="package-badge">Honeymoon</span>
+            <div class="package-icon">💑</div>
+          </div>
+          <div class="package-content">
+            <h3 class="package-title">5-Day Romantic Zanzibar Getaway</h3>
+            <p class="package-price">From $1250</p>
+            <p class="package-duration">5 Days / 4 Nights</p>
+            <p class="package-desc">The perfect romantic escape with private experiences and luxury accommodations.</p>
+            <ul class="package-features">
+              <li>Private Beach Villa</li>
+              <li>Romantic Dinners</li>
+              <li>Couples Spa Treatments</li>
+              <li>Private Dhow Cruise</li>
+              <li>Personalized Service</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+
+        <!-- New Zanzibar Package 3 -->
+        <div class="package-card" data-category="zanzibar">
+          <div class="package-img-container">
+            <div class="package-icon">🤿</div>
+          </div>
+          <div class="package-content">
+            <h3 class="package-title">3-Day Diving & Snorkeling Adventure</h3>
+            <p class="package-price">From $380</p>
+            <p class="package-duration">3 Days / 2 Nights</p>
+            <p class="package-desc">Explore Zanzibar's vibrant underwater world with our diving and snorkeling package.
+            </p>
+            <ul class="package-features">
+              <li>Two Diving/Snorkeling Trips</li>
+              <li>Equipment Rental</li>
+              <li>PADI Certified Instructors</li>
+              <li>Beachside Accommodation</li>
+              <li>Marine Park Fees</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="category-divider"></div>
+
+    <!-- Combination Packages -->
+    <div class="package-category">
+      <h2 class="category-title">Combination Packages</h2>
+      <div class="package-grid">
+        <!-- New Combination Package 1 -->
+        <div class="package-card" data-category="safari zanzibar luxury">
+          <div class="package-img-container">
+            <span class="package-badge">Best Seller</span>
+            <div class="package-icon">🦁🏖️</div>
+          </div>
+          <div class="package-content">
+            <h3 class="package-title">12-Day Safari & Zanzibar Paradise</h3>
+            <p class="package-price">From $2850</p>
+            <p class="package-duration">12 Days / 11 Nights</p>
+            <p class="package-desc">The ultimate Tanzania experience combining wildlife safari with Zanzibar beach
+              relaxation.</p>
+            <ul class="package-features">
+              <li>7-Day Northern Circuit Safari</li>
+              <li>5-Day Zanzibar Beach Stay</li>
+              <li>Luxury Accommodation</li>
+              <li>Internal Flights Included</li>
+              <li>Private Transfers</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+
+        <!-- New Combination Package 2 -->
+        <div class="package-card" data-category="kilimanjaro zanzibar">
+          <div class="package-img-container">
+            <span class="package-badge">Adventure</span>
+            <div class="package-icon">⛰️🏖️</div>
+          </div>
+          <div class="package-content">
+            <h3 class="package-title">14-Day Kilimanjaro & Zanzibar Adventure</h3>
+            <p class="package-price">From $3200</p>
+            <p class="package-duration">14 Days / 13 Nights</p>
+            <p class="package-desc">Conquer Africa's highest peak then relax on Zanzibar's pristine beaches.</p>
+            <ul class="package-features">
+              <li>7-Day Machame Route Climb</li>
+              <li>7-Day Zanzibar Holiday</li>
+              <li>Certified Mountain Guides</li>
+              <li>Beachfront Resort</li>
+              <li>All Transfers Included</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+
+        <!-- New Combination Package 3 -->
+        <div class="package-card" data-category="safari kilimanjaro zanzibar luxury">
+          <div class="package-img-container">
+            <span class="package-badge">Ultimate</span>
+            <div class="package-icon">🦁⛰️🏖️</div>
+          </div>
+          <div class="package-content">
+            <h3 class="package-title">18-Day Ultimate Tanzania Experience</h3>
+            <p class="package-price">From $4850</p>
+            <p class="package-duration">18 Days / 17 Nights</p>
+            <p class="package-desc">Experience the best of Tanzania: wildlife, mountains, and beaches in one epic
+              journey.</p>
+            <ul class="package-features">
+              <li>7-Day Luxury Safari</li>
+              <li>7-Day Kilimanjaro Climb</li>
+              <li>4-Day Zanzibar Retreat</li>
+              <li>Private Guide Throughout</li>
+              <li>All-Inclusive Luxury</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+
+        <!-- New Combination Package 4 -->
+        <div class="package-card" data-category="safari zanzibar">
+          <div class="package-img-container">
+            <span class="package-badge">Family</span>
+            <div class="package-icon">👨‍👩‍👧‍👦</div>
+          </div>
+          <div class="package-content">
+            <h3 class="package-title">10-Day Family Safari & Beach Holiday</h3>
+            <p class="package-price">From $4200 (family of 4)</p>
+            <p class="package-duration">10 Days / 9 Nights</p>
+            <p class="package-desc">A perfect family adventure combining child-friendly safari experiences with beach
+              fun.</p>
+            <ul class="package-features">
+              <li>5-Day Family-Friendly Safari</li>
+              <li>5-Day Zanzibar Beach Stay</li>
+              <li>Child-Friendly Accommodations</li>
+              <li>Special Activities for Kids</li>
+              <li>Family Discount</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+
+        <!-- New Combination Package 5 -->
+        <div class="package-card" data-category="safari kilimanjaro">
+          <div class="package-img-container">
+            <div class="package-icon">🦁⛰️</div>
+          </div>
+          <div class="package-content">
+            <h3 class="package-title">15-Day Wildlife & Mountain Expedition</h3>
+            <p class="package-price">From $3650</p>
+            <p class="package-duration">15 Days / 14 Nights</p>
+            <p class="package-desc">Combine the thrill of safari with the challenge of climbing Africa's highest peak.
+            </p>
+            <ul class="package-features">
+              <li>7-Day Northern Circuit Safari</li>
+              <li>8-Day Kilimanjaro Climb</li>
+              <li>Expert Guides for Both Activities</li>
+              <li>All National Park Fees</li>
+              <li>Comfortable Accommodations</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- No Results Message (Hidden by default) -->
+    <div class="no-results" style="display: none;">
+      <h3>No packages found</h3>
+      <p>We couldn't find any packages matching your selected filters. Please try different criteria.</p>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="package-cta">
+    <div class="container">
+      <h2>Can't Find What You're Looking For?</h2>
+      <p>We specialize in creating custom safari experiences tailored to your preferences, budget, and travel style.
+        Contact us to design your dream African adventure.</p>
+      <a href="contact.html" class="btn btn-outline-light">Customize Your Safari</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>African Royalty Safaris</h5>
+          <p>Your gateway to unforgettable African adventures. Luxury safaris, Kilimanjaro climbs, and Zanzibar escapes.
+          </p>
+          <div class="social-icons">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Destinations</h5>
+          <ul class="footer-links">
+            <li><a href="kilimanjaro.html">Mount Kilimanjaro</a></li>
+            <li><a href="zanzibar.html">Zanzibar</a></li>
+            <li><a href="Destination.html">Safari Destinations</a></li>
+            <li><a href="packages.html">All Packages</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Contact Us</h5>
+          <ul class="footer-links">
+            <li><i class="fa fa-phone"></i> +255 699 179 046</li>
+            <li><i class="fa fa-envelope"></i> africanroyaltysafaris@gmail.com</li>
+            <li><i class="fa fa-map-marker"></i> Arusha, Tanzania</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>Copyright &copy; 2025 African Royalty Safaris | All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Package filtering functionality
+      $('.filter-btn').on('click', function () {
+        $('.filter-btn').removeClass('active');
+        $(this).addClass('active');
+
+        const filter = $(this).data('filter');
+        let visibleCount = 0;
+
+        if (filter === 'all') {
+          $('.package-card').show();
+          visibleCount = $('.package-card').length;
+        } else {
+          $('.package-card').hide();
+          $(`.package-card[data-category*="${filter}"]`).show();
+          visibleCount = $(`.package-card[data-category*="${filter}"]`).length;
+        }
+
+        // Show/hide no results message
+        if (visibleCount === 0) {
+          $('.no-results').show();
+        } else {
+          $('.no-results').hide();
+        }
+      });
+
+      // Smooth scrolling for anchor links
+      $('a[href*="#"]').on('click', function (e) {
+        e.preventDefault();
+
+        $('html, body').animate(
+          {
+            scrollTop: $($(this).attr('href')).offset().top - 100,
+          },
+          500,
+          'linear'
+        );
+      });
+    });
+  </script>
+</body>
+
+</html>

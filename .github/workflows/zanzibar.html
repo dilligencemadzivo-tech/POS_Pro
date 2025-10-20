@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Zanzibar | African Royalty Safaris</title>
+
+  <link rel="icon" type="image/png" href="img/logo.png" />
+  <link rel="apple-touch-icon" href="img/logo.png" />
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/tooplate-style.css" />
+
+  <style>
+    :root {
+      --primary-color: #3c8d0d;
+      --primary-dark: #2e6f0a;
+      --secondary-color: #f8b500;
+      --light-bg: #f9f9f9;
+      --dark-text: #333;
+      --light-text: #fff;
+      --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--light-bg);
+      margin: 0;
+      padding: 0;
+      color: var(--dark-text);
+      font-size: 18px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .tm-top-contact {
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      color: var(--light-text);
+      text-align: center;
+      padding: 12px 0;
+      font-size: 18px;
+      font-weight: 600;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .tm-top-contact a {
+      color: var(--light-text);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .tm-top-contact a:hover {
+      color: var(--secondary-color);
+    }
+
+    /* Modernized Navbar */
+    .navbar {
+      padding: 1rem 0;
+      background-color: var(--light-text);
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar.scrolled {
+      padding: 0.5rem 0;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary-color) !important;
+    }
+
+    .navbar-brand img {
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .nav-link {
+      font-weight: 600;
+      color: var(--dark-text) !important;
+      margin: 0 5px;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 10px 15px !important;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--primary-color) !important;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--primary-color);
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .nav-item.active .nav-link {
+      color: var(--primary-color) !important;
+    }
+
+    /* Mobile Navigation */
+    .navbar-toggler {
+      border: none;
+      padding: 5px 10px;
+      background: transparent;
+    }
+
+    .navbar-toggler:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    .navbar-toggler-icon {
+      width: 25px;
+      height: 2px;
+      background-color: var(--dark-text);
+      display: block;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 2px;
+      background-color: var(--dark-text);
+      left: 0;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-toggler-icon::before {
+      top: -8px;
+    }
+
+    .navbar-toggler-icon::after {
+      top: 8px;
+    }
+
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+      background-color: transparent;
+    }
+
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+      transform: rotate(45deg);
+      top: 0;
+    }
+
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+      transform: rotate(-45deg);
+      top: 0;
+    }
+
+    .hero-section {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/zanzibar-hero.jpg');
+      background-size: cover;
+      background-position: center;
+      color: var(--light-text);
+      padding: 180px 0 100px;
+      text-align: center;
+      margin-top: 70px;
+    }
+
+    .hero-section h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-section p {
+      font-size: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto 30px;
+    }
+
+    .tm-btn {
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      color: var(--light-text);
+      padding: 12px 30px;
+      text-decoration: none;
+      border-radius: 50px;
+      display: inline-block;
+      margin-top: 15px;
+      font-weight: 600;
+      border: none;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
+    }
+
+    .tm-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      color: var(--light-text);
+      text-decoration: none;
+    }
+
+    .tm-btn-secondary {
+      background: linear-gradient(135deg, var(--secondary-color), #e6a500);
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 30px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60%;
+      height: 4px;
+      background-color: var(--secondary-color);
+    }
+
+    .about-section {
+      padding: 80px 0;
+      background: var(--light-bg);
+    }
+
+    .feature-card {
+      background: var(--light-text);
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      height: 100%;
+      text-align: center;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .feature-icon {
+      font-size: 3rem;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: var(--primary-color);
+    }
+
+    .package-card {
+      background: var(--light-text);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      margin-bottom: 30px;
+      height: 100%;
+    }
+
+    .package-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .package-image {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .package-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.5s ease;
+    }
+
+    .package-card:hover .package-image img {
+      transform: scale(1.1);
+    }
+
+    .package-content {
+      padding: 25px;
+    }
+
+    .package-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    .package-price {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--secondary-color);
+      margin-bottom: 15px;
+    }
+
+    .package-features {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+
+    .package-features li {
+      padding: 5px 0;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .package-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    .testimonial-section {
+      padding: 80px 0;
+      background: linear-gradient(rgba(60, 141, 13, 0.9), rgba(60, 141, 13, 0.9)), url('img/testimonial-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      color: var(--light-text);
+    }
+
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      padding: 30px;
+      margin: 15px;
+      box-shadow: var(--shadow);
+      height: 100%;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+    }
+
+    .testimonial-author img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 15px;
+      border: 3px solid var(--secondary-color);
+    }
+
+    .author-info h4 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .author-info p {
+      margin: 0;
+      opacity: 0.8;
+    }
+
+    .cta-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      color: var(--light-text);
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .cta-section p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+
+    .footer {
+      background: #222;
+      color: var(--light-text);
+      padding: 60px 0 30px;
+    }
+
+    .footer h4 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      color: var(--secondary-color);
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: #ccc;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--secondary-color);
+      padding-left: 5px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: var(--light-text);
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      background: var(--secondary-color);
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      margin-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* Animation classes */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+      .hero-section h1 {
+        font-size: 3rem;
+      }
+
+      .hero-section p {
+        font-size: 1.3rem;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .hero-section h1 {
+        font-size: 2.8rem;
+      }
+
+      .hero-section p {
+        font-size: 1.2rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .navbar-brand {
+        font-size: 1.3rem;
+      }
+
+      .navbar-brand img {
+        height: 45px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 130px 0 60px;
+      }
+
+      .hero-section h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero-section p {
+        font-size: 1.1rem;
+      }
+
+      .about-section,
+      .testimonial-section,
+      .cta-section {
+        padding: 60px 0;
+      }
+
+      .testimonial-author {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .testimonial-author img {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-section {
+        padding: 120px 0 50px;
+      }
+
+      .hero-section h1 {
+        font-size: 2rem;
+      }
+
+      .hero-section p {
+        font-size: 1rem;
+      }
+
+      .navbar-brand {
+        font-size: 1.1rem;
+      }
+
+      .navbar-brand img {
+        height: 40px;
+      }
+
+      .tm-top-contact {
+        font-size: 16px;
+        padding: 10px 0;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .feature-card,
+      .package-content,
+      .testimonial-card {
+        padding: 20px;
+      }
+
+      .cta-section h2 {
+        font-size: 2rem;
+      }
+
+      .cta-section p {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .hero-section h1 {
+        font-size: 1.8rem;
+      }
+
+      .navbar-brand {
+        font-size: 1rem;
+      }
+
+      .navbar-brand img {
+        height: 35px;
+        margin-right: 5px;
+      }
+
+      .tm-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top Contact Info -->
+  <div class="tm-top-contact">
+    <a href="tel:+255699179046"><i class="fas fa-phone-alt"></i> +255 699 179 046</a> |
+    <a href="mailto:africanroyaltysafaris@gmail.com"><i class="fas fa-envelope"></i> africanroyaltysafaris@gmail.com</a>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/logo.png" alt="Logo" />
+        African Royalty Safaris
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="kilimanjaro.html">Kilimanjaro</a></li>
+          <li class="nav-item active"><a class="nav-link" href="zanzibar.html">Zanzibar</a></li>
+          <li class="nav-item"><a class="nav-link" href="Destination.html">Destinations</a></li>
+          <li class="nav-item"><a class="nav-link" href="packages.html">Packages</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <h1>Discover Zanzibar's Paradise</h1>
+      <p>Experience the perfect blend of pristine beaches, rich culture, and exotic spice tours in Tanzania's tropical
+        archipelago</p>
+      <a href="#packages" class="tm-btn tm-btn-secondary">Explore Our Packages</a>
+    </div>
+  </section>
+
+  <!-- About Zanzibar Section -->
+  <section class="about-section">
+    <div class="container">
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <img src="img/zanzibar-about.jpg" alt="Zanzibar Beach" class="img-fluid rounded shadow" />
+        </div>
+        <div class="col-lg-6">
+          <h2 class="section-title">Welcome to Zanzibar</h2>
+          <p>
+            <strong>African Royalty Safaris</strong> invites you to explore the enchanting island of Zanzibar, a
+            tropical paradise in the Indian Ocean. Known as the "Spice Island," Zanzibar offers a unique blend of
+            stunning white-sand beaches, crystal-clear turquoise waters, and a rich cultural heritage.
+          </p>
+          <p>
+            Our expertly crafted Zanzibar experiences take you beyond the ordinary, immersing you in the island's
+            vibrant history, diverse marine life, and warm Swahili hospitality. From exploring the UNESCO World Heritage
+            Site of Stone Town to relaxing on pristine beaches and snorkeling in vibrant coral reefs, we create
+            unforgettable memories tailored to your preferences.
+          </p>
+          <a href="contact.html" class="tm-btn">Plan Your Zanzibar Adventure</a>
+        </div>
+      </div>
+
+      <!-- Features Section -->
+      <div class="row mt-5">
+        <div class="col-12 text-center mb-5">
+          <h2 class="section-title">Why Choose Zanzibar?</h2>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="feature-card fade-in">
+            <div class="feature-icon">
+              <i class="fas fa-umbrella-beach"></i>
+            </div>
+            <h3>Pristine Beaches</h3>
+            <p>Relax on world-famous beaches with powdery white sand and crystal-clear turquoise waters perfect for
+              swimming and water sports.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="feature-card fade-in">
+            <div class="feature-icon">
+              <i class="fas fa-history"></i>
+            </div>
+            <h3>Rich History</h3>
+            <p>Explore Stone Town's labyrinthine alleys, ancient buildings, and learn about Zanzibar's fascinating
+              history as a trading hub.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="feature-card fade-in">
+            <div class="feature-icon">
+              <i class="fas fa-fish"></i>
+            </div>
+            <h3>Marine Wonders</h3>
+            <p>Discover vibrant coral reefs teeming with marine life through snorkeling, diving, or a traditional dhow
+              cruise.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Packages Section -->
+  <section id="packages" class="py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center mb-5">
+          <h2 class="section-title">Zanzibar Packages</h2>
+          <p class="lead">Choose from our carefully curated Zanzibar experiences</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="package-card fade-in">
+            <div class="package-image">
+              <img src="img/beach-retreat.jpg" alt="Beach Retreat" />
+            </div>
+            <div class="package-content">
+              <h3 class="package-title">Beach Paradise Retreat</h3>
+              <div class="package-price">From $1,200 / person</div>
+              <p>5 days of pure relaxation on Zanzibar's most beautiful beaches</p>
+              <ul class="package-features">
+                <li>4 nights luxury beach resort</li>
+                <li>Daily breakfast & dinner</li>
+                <li>Spice farm tour</li>
+                <li>Stone Town walking tour</li>
+                <li>Snorkeling trip</li>
+              </ul>
+              <a href="contact.html" class="tm-btn w-100 text-center">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="package-card fade-in">
+            <div class="package-image">
+              <img src="img/cultural-experience.jpg" alt="Cultural Experience" />
+            </div>
+            <div class="package-content">
+              <h3 class="package-title">Cultural & Spice Experience</h3>
+              <div class="package-price">From $950 / person</div>
+              <p>Immerse yourself in Zanzibar's rich heritage and flavors</p>
+              <ul class="package-features">
+                <li>3 nights accommodation</li>
+                <li>Spice plantation tour</li>
+                <li>Stone Town historical tour</li>
+                <li>Traditional Swahili cooking class</li>
+                <li>Local market visit</li>
+              </ul>
+              <a href="contact.html" class="tm-btn w-100 text-center">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="package-card fade-in">
+            <div class="package-image">
+              <img src="img/adventure-package.jpg" alt="Adventure Package" />
+            </div>
+            <div class="package-content">
+              <h3 class="package-title">Island Adventure</h3>
+              <div class="package-price">From $1,500 / person</div>
+              <p>For the active traveler seeking Zanzibar's best experiences</p>
+              <ul class="package-features">
+                <li>6 nights accommodation</li>
+                <li>Scuba diving or snorkeling</li>
+                <li>Jozani Forest tour</li>
+                <li>Dolphin watching</li>
+                <li>Sunset dhow cruise</li>
+              </ul>
+              <a href="contact.html" class="tm-btn w-100 text-center">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonial-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center mb-5">
+          <h2 class="text-white">What Our Travelers Say</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-text">
+              "Our Zanzibar experience with African Royalty Safaris was absolutely magical. The attention to detail and
+              personalized service made our honeymoon unforgettable."
+            </div>
+            <div class="testimonial-author">
+              <img src="img/client1.jpg" alt="Sarah Johnson" />
+              <div class="author-info">
+                <h4>Sarah & Mark Johnson</h4>
+                <p>Honeymoon Travelers</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-text">
+              "The spice tour and Stone Town exploration were highlights of our trip. Our guide was incredibly
+              knowledgeable and made history come alive for us."
+            </div>
+            <div class="testimonial-author">
+              <img src="img/client2.jpg" alt="Robert Chen" />
+              <div class="author-info">
+                <h4>Robert Chen</h4>
+                <p>Cultural Enthusiast</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-text">
+              "The beaches were even more beautiful than in the pictures! African Royalty Safaris arranged everything
+              perfectly - from airport transfers to our amazing beach resort."
+            </div>
+            <div class="testimonial-author">
+              <img src="img/client3.jpg" alt="Emma Wilson" />
+              <div class="author-info">
+                <h4>Emma Wilson</h4>
+                <p>Beach Lover</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready for Your Zanzibar Adventure?</h2>
+      <p>Contact us today to start planning your personalized Zanzibar experience. Our travel experts will create the
+        perfect itinerary tailored to your interests and preferences.</p>
+      <a href="contact.html" class="tm-btn tm-btn-secondary">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <h4>African Royalty Safaris</h4>
+          <p>Creating unforgettable African experiences with personalized service and attention to detail.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-tripadvisor"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="kilimanjaro.html">Kilimanjaro</a></li>
+            <li><a href="zanzibar.html">Zanzibar</a></li>
+            <li><a href="Destination.html">Destinations</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h4>Contact Info</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-phone-alt"></i> +255 699 179 046</li>
+            <li><i class="fas fa-envelope"></i> africanroyaltysafaris@gmail.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> Tanzania, East Africa</li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h4>Newsletter</h4>
+          <p>Subscribe to receive updates on special offers and new destinations.</p>
+          <form>
+            <div class="input-group mb-3">
+              <input type="email" class="form-control" placeholder="Your email" aria-label="Your email">
+              <div class="input-group-append">
+                <button class="tm-btn" type="button">Subscribe</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2025 African Royalty Safaris. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script>
+    // Navbar scroll effect
+    $(window).scroll(function () {
+      if ($(window).scrollTop() > 50) {
+        $('.navbar').addClass('scrolled');
+      } else {
+        $('.navbar').removeClass('scrolled');
+      }
+    });
+
+    // Close mobile menu when clicking on a link
+    $('.navbar-nav>li>a').on('click', function () {
+      $('.navbar-collapse').collapse('hide');
+    });
+
+    // Fade in animation on scroll
+    document.addEventListener('DOMContentLoaded', function () {
+      const fadeElements = document.querySelectorAll('.fade-in');
+
+      const fadeInOnScroll = function () {
+        fadeElements.forEach(function (element) {
+          const elementTop = element.getBoundingClientRect().top;
+          const elementVisible = 150;
+
+          if (elementTop < window.innerHeight - elementVisible) {
+            element.classList.add('visible');
+          }
+        });
+      };
+
+      // Check on load
+      fadeInOnScroll();
+
+      // Check on scroll
+      window.addEventListener('scroll', fadeInOnScroll);
+    });
+  </script>
+</body>
+
+</html>

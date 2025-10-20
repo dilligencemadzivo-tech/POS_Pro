@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Kilimanjaro | African Royalty Safaris</title>
+
+  <link rel="icon" type="image/png" href="img/logo.png" />
+  <link rel="apple-touch-icon" href="img/logo.png" />
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/tooplate-style.css" />
+
+  <style>
+    :root {
+      --primary-color: #3c8d0d;
+      --primary-dark: #2e6f0a;
+      --secondary-color: #f8b500;
+      --light-bg: #f9f9f9;
+      --dark-text: #333;
+      --light-text: #fff;
+      --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      --mountain-gradient: linear-gradient(135deg, #2c3e50, #4a6491);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--light-bg);
+      margin: 0;
+      padding: 0;
+      color: var(--dark-text);
+      font-size: 18px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .tm-top-contact {
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      color: var(--light-text);
+      text-align: center;
+      padding: 12px 0;
+      font-size: 18px;
+      font-weight: 600;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .tm-top-contact a {
+      color: var(--light-text);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .tm-top-contact a:hover {
+      color: var(--secondary-color);
+    }
+
+    /* Modernized Navbar */
+    .navbar {
+      padding: 1rem 0;
+      background-color: var(--light-text);
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar.scrolled {
+      padding: 0.5rem 0;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary-color) !important;
+    }
+
+    .navbar-brand img {
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .nav-link {
+      font-weight: 600;
+      color: var(--dark-text) !important;
+      margin: 0 5px;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 10px 15px !important;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--primary-color) !important;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--primary-color);
+      transition: var(--transition);
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .nav-item.active .nav-link {
+      color: var(--primary-color) !important;
+    }
+
+    /* Mobile Navigation */
+    .navbar-toggler {
+      border: none;
+      padding: 5px 10px;
+      background: transparent;
+    }
+
+    .navbar-toggler:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    .navbar-toggler-icon {
+      width: 25px;
+      height: 2px;
+      background-color: var(--dark-text);
+      display: block;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 2px;
+      background-color: var(--dark-text);
+      left: 0;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-toggler-icon::before {
+      top: -8px;
+    }
+
+    .navbar-toggler-icon::after {
+      top: 8px;
+    }
+
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+      background-color: transparent;
+    }
+
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+      transform: rotate(45deg);
+      top: 0;
+    }
+
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+      transform: rotate(-45deg);
+      top: 0;
+    }
+
+    .hero-section {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/kilimanjaro-hero.jpg');
+      background-size: cover;
+      background-position: center;
+      color: var(--light-text);
+      padding: 180px 0 100px;
+      text-align: center;
+      position: relative;
+      margin-top: 70px;
+    }
+
+    .hero-section h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-section p {
+      font-size: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto 30px;
+    }
+
+    .mountain-stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .stat-item {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      min-width: 150px;
+    }
+
+    .stat-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .tm-btn {
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      color: var(--light-text);
+      padding: 12px 30px;
+      text-decoration: none;
+      border-radius: 50px;
+      display: inline-block;
+      margin-top: 15px;
+      font-weight: 600;
+      border: none;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
+    }
+
+    .tm-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      color: var(--light-text);
+      text-decoration: none;
+    }
+
+    .tm-btn-secondary {
+      background: linear-gradient(135deg, var(--secondary-color), #e6a500);
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 30px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60%;
+      height: 4px;
+      background-color: var(--secondary-color);
+    }
+
+    .about-section {
+      padding: 80px 0;
+      background: var(--light-bg);
+    }
+
+    .feature-card {
+      background: var(--light-text);
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      height: 100%;
+      text-align: center;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .feature-icon {
+      font-size: 3rem;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: var(--primary-color);
+    }
+
+    .routes-section {
+      padding: 80px 0;
+      background: var(--mountain-gradient);
+      color: var(--light-text);
+    }
+
+    .route-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      margin-bottom: 30px;
+      height: 100%;
+    }
+
+    .route-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .route-image {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .route-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.5s ease;
+    }
+
+    .route-card:hover .route-image img {
+      transform: scale(1.1);
+    }
+
+    .route-content {
+      padding: 25px;
+    }
+
+    .route-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .route-details {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+
+    .route-details li {
+      padding: 5px 0;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .route-details li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--secondary-color);
+      font-weight: bold;
+    }
+
+    .package-card {
+      background: var(--light-text);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      margin-bottom: 30px;
+      height: 100%;
+    }
+
+    .package-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .package-image {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .package-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.5s ease;
+    }
+
+    .package-card:hover .package-image img {
+      transform: scale(1.1);
+    }
+
+    .package-content {
+      padding: 25px;
+    }
+
+    .package-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    .package-price {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--secondary-color);
+      margin-bottom: 15px;
+    }
+
+    .package-features {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+
+    .package-features li {
+      padding: 5px 0;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .package-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    .preparation-section {
+      padding: 80px 0;
+      background: var(--light-bg);
+    }
+
+    .prep-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 30px;
+    }
+
+    .prep-icon {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-right: 20px;
+      min-width: 60px;
+    }
+
+    .prep-content h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--primary-color);
+    }
+
+    .testimonial-section {
+      padding: 80px 0;
+      background: linear-gradient(rgba(60, 141, 13, 0.9), rgba(60, 141, 13, 0.9)), url('img/testimonial-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      color: var(--light-text);
+    }
+
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      padding: 30px;
+      margin: 15px;
+      box-shadow: var(--shadow);
+      height: 100%;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+    }
+
+    .testimonial-author img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 15px;
+      border: 3px solid var(--secondary-color);
+    }
+
+    .author-info h4 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .author-info p {
+      margin: 0;
+      opacity: 0.8;
+    }
+
+    .cta-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      color: var(--light-text);
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .cta-section p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+
+    .footer {
+      background: #222;
+      color: var(--light-text);
+      padding: 60px 0 30px;
+    }
+
+    .footer h4 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      color: var(--secondary-color);
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: #ccc;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--secondary-color);
+      padding-left: 5px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: var(--light-text);
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      background: var(--secondary-color);
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      margin-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* Animation classes */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+      .hero-section h1 {
+        font-size: 3rem;
+      }
+
+      .hero-section p {
+        font-size: 1.3rem;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .hero-section h1 {
+        font-size: 2.8rem;
+      }
+
+      .hero-section p {
+        font-size: 1.2rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .navbar-brand {
+        font-size: 1.3rem;
+      }
+
+      .navbar-brand img {
+        height: 45px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 130px 0 60px;
+      }
+
+      .hero-section h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero-section p {
+        font-size: 1.1rem;
+      }
+
+      .about-section,
+      .routes-section,
+      .preparation-section,
+      .testimonial-section,
+      .cta-section {
+        padding: 60px 0;
+      }
+
+      .mountain-stats {
+        gap: 15px;
+      }
+
+      .stat-item {
+        min-width: 120px;
+        padding: 15px;
+      }
+
+      .stat-value {
+        font-size: 2rem;
+      }
+
+      .prep-item {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .prep-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+
+      .testimonial-author {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .testimonial-author img {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-section {
+        padding: 120px 0 50px;
+      }
+
+      .hero-section h1 {
+        font-size: 2rem;
+      }
+
+      .hero-section p {
+        font-size: 1rem;
+      }
+
+      .navbar-brand {
+        font-size: 1.1rem;
+      }
+
+      .navbar-brand img {
+        height: 40px;
+      }
+
+      .tm-top-contact {
+        font-size: 16px;
+        padding: 10px 0;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .stat-item {
+        min-width: 100px;
+        padding: 10px;
+      }
+
+      .stat-value {
+        font-size: 1.8rem;
+      }
+
+      .feature-card,
+      .route-content,
+      .package-content,
+      .testimonial-card {
+        padding: 20px;
+      }
+
+      .cta-section h2 {
+        font-size: 2rem;
+      }
+
+      .cta-section p {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .hero-section h1 {
+        font-size: 1.8rem;
+      }
+
+      .navbar-brand {
+        font-size: 1rem;
+      }
+
+      .navbar-brand img {
+        height: 35px;
+        margin-right: 5px;
+      }
+
+      .mountain-stats {
+        gap: 10px;
+      }
+
+      .stat-item {
+        min-width: 80px;
+        padding: 8px;
+      }
+
+      .stat-value {
+        font-size: 1.5rem;
+      }
+
+      .stat-label {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top Contact Info -->
+  <div class="tm-top-contact">
+    <a href="tel:+255699179046"><i class="fas fa-phone-alt"></i> +255 699 179 046</a> |
+    <a href="mailto:africanroyaltysafaris@gmail.com"><i class="fas fa-envelope"></i> africanroyaltysafaris@gmail.com</a>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/logo.png" alt="Logo" />
+        African Royalty Safaris
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item active"><a class="nav-link" href="kilimanjaro.html">Kilimanjaro</a></li>
+          <li class="nav-item"><a class="nav-link" href="zanzibar.html">Zanzibar</a></li>
+          <li class="nav-item"><a class="nav-link" href="Destination.html">Destinations</a></li>
+          <li class="nav-item"><a class="nav-link" href="packages.html">Packages</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <h1>Conquer the Roof of Africa</h1>
+      <p>Embark on the adventure of a lifetime to the summit of Mount Kilimanjaro, Africa's highest peak at 5,895 meters
+      </p>
+      <a href="#packages" class="tm-btn tm-btn-secondary">View Climbing Packages</a>
+
+      <div class="mountain-stats">
+        <div class="stat-item">
+          <div class="stat-value">5,895m</div>
+          <div class="stat-label">Elevation</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">7+</div>
+          <div class="stat-label">Routes</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">5-9</div>
+          <div class="stat-label">Days</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">85%</div>
+          <div class="stat-label">Success Rate</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Kilimanjaro Section -->
+  <section class="about-section">
+    <div class="container">
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <img src="img/kilimanjaro-about.jpg" alt="Mount Kilimanjaro" class="img-fluid rounded shadow" />
+        </div>
+        <div class="col-lg-6">
+          <h2 class="section-title">About Mount Kilimanjaro</h2>
+          <p>
+            Mount Kilimanjaro is Africa's highest peak and the world's tallest free-standing mountain. Located in
+            Tanzania, this majestic dormant volcano rises approximately 4,900 meters from its base and includes three
+            volcanic cones: Kibo, Mawenzi, and Shira.
+          </p>
+          <p>
+            With African Royalty Safaris, you'll experience a carefully planned ascent that maximizes your chances of
+            reaching Uhuru Peak while ensuring your safety and comfort throughout the journey. Our expert guides,
+            porters, and comprehensive support system make this challenging adventure accessible to determined
+            individuals with proper preparation.
+          </p>
+          <a href="contact.html" class="tm-btn">Start Your Climb</a>
+        </div>
+      </div>
+
+      <!-- Features Section -->
+      <div class="row mt-5">
+        <div class="col-12 text-center mb-5">
+          <h2 class="section-title">Why Climb With Us?</h2>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="feature-card fade-in">
+            <div class="feature-icon">
+              <i class="fas fa-user-shield"></i>
+            </div>
+            <h3>Expert Guides</h3>
+            <p>Our certified guides have extensive experience and training in high-altitude climbing and emergency
+              response.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="feature-card fade-in">
+            <div class="feature-icon">
+              <i class="fas fa-hiking"></i>
+            </div>
+            <h3>Acclimatization Focus</h3>
+            <p>We use proven acclimatization techniques and routes to maximize your chances of summit success.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="feature-card fade-in">
+            <div class="feature-icon">
+              <i class="fas fa-concierge-bell"></i>
+            </div>
+            <h3>Full Support</h3>
+            <p>From quality equipment to nutritious meals and comfortable camps, we handle all logistics so you can
+              focus on the climb.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Routes Section -->
+  <section class="routes-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center mb-5">
+          <h2 class="text-white">Climbing Routes</h2>
+          <p class="lead">Choose the path that matches your experience and preferences</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="route-card fade-in">
+            <div class="route-image">
+              <img src="img/machame-route.jpg" alt="Machame Route" />
+            </div>
+            <div class="route-content">
+              <h3 class="route-title">Machame Route (7 days)</h3>
+              <p>Known as the "Whiskey Route," this popular path offers beautiful scenery and excellent acclimatization.
+              </p>
+              <ul class="route-details">
+                <li>Scenic and diverse landscapes</li>
+                <li>High success rate</li>
+                <li>Moderate to difficult challenge</li>
+                <li>Camping accommodation</li>
+              </ul>
+              <a href="contact.html" class="tm-btn tm-btn-secondary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="route-card fade-in">
+            <div class="route-image">
+              <img src="img/marangu-route.jpg" alt="Marangu Route" />
+            </div>
+            <div class="route-content">
+              <h3 class="route-title">Marangu Route (6 days)</h3>
+              <p>Often called the "Coca-Cola Route," this is the only route with hut accommodation.</p>
+              <ul class="route-details">
+                <li>Hut accommodation available</li>
+                <li>Most direct route to summit</li>
+                <li>Less challenging but steeper</li>
+                <li>Shorter duration option</li>
+              </ul>
+              <a href="contact.html" class="tm-btn tm-btn-secondary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="route-card fade-in">
+            <div class="route-image">
+              <img src="img/lemosho-route.jpg" alt="Lemosho Route" />
+            </div>
+            <div class="route-content">
+              <h3 class="route-title">Lemosho Route (8 days)</h3>
+              <p>Considered the most beautiful route with high success rates due to excellent acclimatization.</p>
+              <ul class="route-details">
+                <li>Stunning scenic variety</li>
+                <li>Excellent acclimatization profile</li>
+                <li>Less crowded</li>
+                <li>Higher success rate</li>
+              </ul>
+              <a href="contact.html" class="tm-btn tm-btn-secondary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="route-card fade-in">
+            <div class="route-image">
+              <img src="img/rongai-route.jpg" alt="Rongai Route" />
+            </div>
+            <div class="route-content">
+              <h3 class="route-title">Rongai Route (7 days)</h3>
+              <p>The only route approaching from the north, offering a more remote wilderness experience.</p>
+              <ul class="route-details">
+                <li>More remote and less crowded</li>
+                <li>Gentler slope at beginning</li>
+                <li>Better during rainy season</li>
+                <li>Wilderness experience</li>
+              </ul>
+              <a href="contact.html" class="tm-btn tm-btn-secondary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Packages Section -->
+  <section id="packages" class="py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center mb-5">
+          <h2 class="section-title">Climbing Packages</h2>
+          <p class="lead">All-inclusive Kilimanjaro experiences</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="package-card fade-in">
+            <div class="package-image">
+              <img src="img/machame-package.jpg" alt="Machame Package" />
+            </div>
+            <div class="package-content">
+              <h3 class="package-title">Machame Route (7 Days)</h3>
+              <div class="package-price">From $2,450 / person</div>
+              <p>Our most popular route with excellent acclimatization</p>
+              <ul class="package-features">
+                <li>6 nights mountain camping</li>
+                <li>All park fees and permits</li>
+                <li>Professional guides & porters</li>
+                <li>All meals on the mountain</li>
+                <li>Quality camping equipment</li>
+              </ul>
+              <a href="contact.html" class="tm-btn w-100 text-center">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="package-card fade-in">
+            <div class="package-image">
+              <img src="img/lemosho-package.jpg" alt="Lemosho Package" />
+            </div>
+            <div class="package-content">
+              <h3 class="package-title">Lemosho Route (8 Days)</h3>
+              <div class="package-price">From $2,850 / person</div>
+              <p>Scenic route with the highest success rate</p>
+              <ul class="package-features">
+                <li>7 nights mountain camping</li>
+                <li>All park fees and permits</li>
+                <li>Extra day for acclimatization</li>
+                <li>Private toilet tent</li>
+                <li>Summit certificate</li>
+              </ul>
+              <a href="contact.html" class="tm-btn w-100 text-center">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="package-card fade-in">
+            <div class="package-image">
+              <img src="img/luxury-package.jpg" alt="Luxury Package" />
+            </div>
+            <div class="package-content">
+              <h3 class="package-title">Lemosho Luxury (9 Days)</h3>
+              <div class="package-price">From $4,200 / person</div>
+              <p>Premium experience with enhanced comfort</p>
+              <ul class="package-features">
+                <li>8 nights on mountain</li>
+                <li>Larger tents with comfortable beds</li>
+                <li>Hot shower available</li>
+                <li>Gourmet meals</li>
+                <li>Higher guide-to-client ratio</li>
+              </ul>
+              <a href="contact.html" class="tm-btn w-100 text-center">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preparation Section -->
+  <section class="preparation-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center mb-5">
+          <h2 class="section-title">Preparation Guide</h2>
+          <p class="lead">How to prepare for your Kilimanjaro climb</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="prep-item fade-in">
+            <div class="prep-icon">
+              <i class="fas fa-dumbbell"></i>
+            </div>
+            <div class="prep-content">
+              <h3>Physical Training</h3>
+              <p>Begin training 3-6 months in advance with cardiovascular exercise, strength training, and hiking with a
+                weighted pack.</p>
+            </div>
+          </div>
+          <div class="prep-item fade-in">
+            <div class="prep-icon">
+              <i class="fas fa-hiking"></i>
+            </div>
+            <div class="prep-content">
+              <h3>Gear & Equipment</h3>
+              <p>We provide a detailed packing list. Essential items include quality hiking boots, layered clothing, and
+                a warm sleeping bag.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="prep-item fade-in">
+            <div class="prep-icon">
+              <i class="fas fa-heartbeat"></i>
+            </div>
+            <div class="prep-content">
+              <h3>Health & Altitude</h3>
+              <p>Consult with your doctor, consider altitude medication, and understand the symptoms of altitude
+                sickness.</p>
+            </div>
+          </div>
+          <div class="prep-item fade-in">
+            <div class="prep-icon">
+              <i class="fas fa-passport"></i>
+            </div>
+            <div class="prep-content">
+              <h3>Travel Documents</h3>
+              <p>Ensure your passport is valid for at least 6 months, obtain a Tanzanian visa, and have travel insurance
+                that covers high-altitude trekking.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonial-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center mb-5">
+          <h2 class="text-white">Summit Success Stories</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-text">
+              "Reaching Uhuru Peak was the most challenging and rewarding experience of my life. The African Royalty
+              Safaris team made sure we were safe, well-fed, and motivated every step of the way."
+            </div>
+            <div class="testimonial-author">
+              <img src="img/climber1.jpg" alt="Michael Thompson" />
+              <div class="author-info">
+                <h4>Michael Thompson</h4>
+                <p>Summited via Machame Route</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-text">
+              "The Lemosho Route was absolutely breathtaking. Our guides were incredibly knowledgeable about the
+              mountain and kept our spirits high even during the toughest parts of the climb."
+            </div>
+            <div class="testimonial-author">
+              <img src="img/climber2.jpg" alt="Sarah Johnson" />
+              <div class="author-info">
+                <h4>Sarah Johnson</h4>
+                <p>Summited via Lemosho Route</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="testimonial-card fade-in">
+            <div class="testimonial-text">
+              "As a first-time high-altitude climber, I was nervous, but the team's expertise and encouragement got me
+              to the summit. Watching the sunrise from Uhuru Peak is a memory I'll cherish forever."
+            </div>
+            <div class="testimonial-author">
+              <img src="img/climber3.jpg" alt="David Chen" />
+              <div class="author-info">
+                <h4>David Chen</h4>
+                <p>Summited via Marangu Route</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to Conquer Kilimanjaro?</h2>
+      <p>Contact us today to start planning your summit adventure. Our climbing experts will help you choose the best
+        route and prepare for this life-changing experience.</p>
+      <a href="contact.html" class="tm-btn tm-btn-secondary">Start Your Journey</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <h4>African Royalty Safaris</h4>
+          <p>Creating unforgettable African experiences with personalized service and attention to detail.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-tripadvisor"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="kilimanjaro.html">Kilimanjaro</a></li>
+            <li><a href="zanzibar.html">Zanzibar</a></li>
+            <li><a href="Destination.html">Destinations</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h4>Contact Info</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-phone-alt"></i> +255 699 179 046</li>
+            <li><i class="fas fa-envelope"></i> africanroyaltysafaris@gmail.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> Tanzania, East Africa</li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h4>Newsletter</h4>
+          <p>Subscribe for climbing tips and special offers.</p>
+          <form>
+            <div class="input-group mb-3">
+              <input type="email" class="form-control" placeholder="Your email" aria-label="Your email">
+              <div class="input-group-append">
+                <button class="tm-btn" type="button">Subscribe</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2025 African Royalty Safaris. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script>
+    // Navbar scroll effect
+    $(window).scroll(function () {
+      if ($(window).scrollTop() > 50) {
+        $('.navbar').addClass('scrolled');
+      } else {
+        $('.navbar').removeClass('scrolled');
+      }
+    });
+
+    // Close mobile menu when clicking on a link
+    $('.navbar-nav>li>a').on('click', function () {
+      $('.navbar-collapse').collapse('hide');
+    });
+
+    // Fade in animation on scroll
+    document.addEventListener('DOMContentLoaded', function () {
+      const fadeElements = document.querySelectorAll('.fade-in');
+
+      const fadeInOnScroll = function () {
+        fadeElements.forEach(function (element) {
+          const elementTop = element.getBoundingClientRect().top;
+          const elementVisible = 150;
+
+          if (elementTop < window.innerHeight - elementVisible) {
+            element.classList.add('visible');
+          }
+        });
+      };
+
+      // Check on load
+      fadeInOnScroll();
+
+      // Check on scroll
+      window.addEventListener('scroll', fadeInOnScroll);
+    });
+  </script>
+</body>
+
+</html>

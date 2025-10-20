@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>African Royalty Safaris - Luxury African Adventures</title>
+    <meta name="description"
+        content="Experience luxury African safaris with African Royalty Safaris. Explore Tanzania's wildlife, climb Kilimanjaro, and relax in Zanzibar.">
+    <link rel="icon" type="image/png" href="img/logo.png" />
+    <link rel="apple-touch-icon" href="img/logo.png" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/datepicker.css" />
+    <link rel="stylesheet" href="css/tooplate-style.css" />
+</head>
+
+<style>
+    :root {
+        --primary-color: #3c8d0d;
+        --secondary-color: #d4af37;
+        --dark-color: #1a2f0f;
+        --light-color: #f8f9fa;
+    }
+
+    body {
+        font-family: 'Open Sans', sans-serif;
+        color: #333;
+        overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: 'Playfair Display', serif;
+    }
+
+    .tm-contact {
+        background-color: var(--primary-color);
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 600;
+    }
+
+    /* Modernized Top Bar */
+    .tm-top-bar {
+        background-color: white !important;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        padding: 15px 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .tm-top-bar.scrolled {
+        padding: 10px 0;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .tm-bg-white-shadow {
+        background-color: white !important;
+    }
+
+    .navbar-nav .nav-link {
+        color: #333 !important;
+        font-weight: 600;
+        transition: color 0.3s ease;
+        position: relative;
+        padding: 10px 15px !important;
+        margin: 0 5px;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: var(--primary-color) !important;
+    }
+
+    .navbar-nav .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--primary-color);
+        transition: width 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover::after {
+        width: 100%;
+    }
+
+    .navbar-nav .nav-item.active .nav-link {
+        color: var(--primary-color) !important;
+    }
+
+    .navbar-nav .nav-item.active .nav-link::after {
+        width: 100%;
+    }
+
+    .navbar-brand {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        color: var(--dark-color) !important;
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+    }
+
+    .navbar-brand img {
+        margin-right: 10px;
+        height: 40px;
+    }
+
+    /* Mobile Navigation */
+    .navbar-toggler {
+        border: none;
+        padding: 5px 10px;
+        background: transparent;
+    }
+
+    .navbar-toggler:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+    .navbar-toggler-icon {
+        width: 25px;
+        height: 2px;
+        background-color: var(--dark-color);
+        display: block;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 2px;
+        background-color: var(--dark-color);
+        left: 0;
+        transition: all 0.3s ease;
+    }
+
+    .navbar-toggler-icon::before {
+        top: -8px;
+    }
+
+    .navbar-toggler-icon::after {
+        top: 8px;
+    }
+
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+        background-color: transparent;
+    }
+
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/hero-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 180px 0 100px;
+        text-align: center;
+        margin-top: 70px;
+    }
+
+    .hero-section h1 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto 30px;
+    }
+
+    .btn-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        padding: 10px 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border-radius: 4px;
+    }
+
+    .btn-primary:hover {
+        background-color: var(--dark-color);
+        border-color: var(--dark-color);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-outline-light {
+        border-width: 2px;
+        padding: 10px 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border-radius: 4px;
+    }
+
+    .btn-outline-light:hover {
+        background-color: white;
+        color: var(--primary-color);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-title {
+        position: relative;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        width: 80px;
+        height: 3px;
+        background-color: var(--secondary-color);
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .feature-box {
+        text-align: center;
+        padding: 30px 20px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        margin-bottom: 30px;
+        background-color: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .feature-box:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-icon {
+        font-size: 3rem;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+    }
+
+    .testimonial-card {
+        background-color: white;
+        border-radius: 5px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin: 15px;
+        height: 100%;
+    }
+
+    .testimonial-text {
+        font-style: italic;
+        margin-bottom: 20px;
+    }
+
+    .testimonial-author {
+        font-weight: 600;
+        color: var(--primary-color);
+    }
+
+    .destination-card {
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+        transition: all 0.3s ease;
+        height: 100%;
+    }
+
+    .destination-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .destination-img {
+        height: 250px;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    .destination-content {
+        padding: 20px;
+    }
+
+    .stats-section {
+        background-color: var(--dark-color);
+        color: white;
+        padding: 80px 0;
+    }
+
+    .stat-number {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--secondary-color);
+        display: block;
+    }
+
+    .stat-text {
+        font-size: 1.2rem;
+    }
+
+    .cta-section {
+        background: linear-gradient(rgba(60, 141, 13, 0.9), rgba(60, 141, 13, 0.9)), url('img/cta-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 100px 0;
+        text-align: center;
+    }
+
+    .footer {
+        background-color: var(--dark-color);
+        color: white;
+        padding: 50px 0 20px;
+    }
+
+    .footer h5 {
+        color: var(--secondary-color);
+        margin-bottom: 20px;
+    }
+
+    .footer-links {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-links li {
+        margin-bottom: 10px;
+    }
+
+    .footer-links a {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+
+    .social-icons a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        text-align: center;
+        line-height: 40px;
+        margin-right: 10px;
+        color: white;
+        transition: all 0.3s ease;
+    }
+
+    .social-icons a:hover {
+        background-color: var(--primary-color);
+        transform: translateY(-5px);
+    }
+
+    .copyright {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 20px;
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+        .hero-section h1 {
+            font-size: 3rem;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .hero-section {
+            padding: 150px 0 80px;
+        }
+
+        .hero-section h1 {
+            font-size: 2.8rem;
+        }
+
+        .navbar-nav .nav-link {
+            padding: 8px 15px !important;
+        }
+
+        .feature-box {
+            padding: 25px 15px;
+        }
+
+        .testimonial-card {
+            padding: 25px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero-section {
+            padding: 130px 0 60px;
+        }
+
+        .hero-section h1 {
+            font-size: 2.2rem;
+        }
+
+        .hero-section p {
+            font-size: 1rem;
+        }
+
+        .navbar-brand {
+            font-size: 1.3rem;
+        }
+
+        .navbar-brand img {
+            height: 35px;
+        }
+
+        .tm-contact {
+            font-size: 16px;
+            padding: 8px 0;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+        }
+
+        .btn-primary,
+        .btn-outline-light {
+            padding: 8px 20px;
+            font-size: 0.9rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .hero-section {
+            padding: 120px 0 50px;
+        }
+
+        .hero-section h1 {
+            font-size: 1.8rem;
+        }
+
+        .hero-section p {
+            font-size: 0.9rem;
+        }
+
+        .navbar-brand {
+            font-size: 1.1rem;
+        }
+
+        .navbar-brand img {
+            height: 30px;
+        }
+
+        .tm-contact {
+            font-size: 14px;
+        }
+
+        .btn-primary,
+        .btn-outline-light {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .btn-primary {
+            margin-right: 0 !important;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+        }
+
+        .feature-box {
+            padding: 20px 15px;
+        }
+
+        .destination-img {
+            height: 200px;
+        }
+
+        .testimonial-card {
+            padding: 20px;
+            margin: 10px 0;
+        }
+
+        .footer {
+            padding: 40px 0 20px;
+        }
+
+        .footer .col-md-4,
+        .footer .col-md-2,
+        .footer .col-md-3 {
+            margin-bottom: 30px;
+        }
+    }
+
+    @media (max-width: 400px) {
+        .hero-section h1 {
+            font-size: 1.6rem;
+        }
+
+        .navbar-brand {
+            font-size: 1rem;
+        }
+
+        .navbar-brand img {
+            height: 25px;
+            margin-right: 5px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+        }
+
+        .stat-text {
+            font-size: 1rem;
+        }
+    }
+</style>
+
+<body>
+    <div class="tm-main-content" id="top">
+        <div class="tm-top-bar-bg"></div>
+        <div class="tm-top-bar" id="tm-top-bar">
+            <div class="container">
+                <div class="row">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand mr-auto" href="#">
+                            <img src="img/logo.png" alt="African Royalty Safaris logo" />
+                            African Royalty Safaris
+                        </a>
+                        <button type="button" id="nav-toggle" class="navbar-toggler" data-toggle="collapse"
+                            data-target="#mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div id="mainNav" class="collapse navbar-collapse tm-bg-white-shadow">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="index.html">HOME <span
+                                            class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="about.html">ABOUT</a></li>
+                                <li class="nav-item"><a class="nav-link" href="kilimanjaro.html">KILIMANJARO</a></li>
+                                <li class="nav-item"><a class="nav-link" href="zanzibar.html">ZANZIBAR</a></li>
+                                <li class="nav-item"><a class="nav-link" href="Destination.html">DESTINATION</a></li>
+                                <li class="nav-item"><a class="nav-link" href="packages.html">PACKAGES</a></li>
+                                <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <div class="tm-contact">
+            📞 +255 699 179 046 | ✉ africanroyaltysafaris@gmail.com
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1>Experience Africa Like Royalty</h1>
+                        <p>Luxury safaris, Kilimanjaro climbs, and Zanzibar escapes tailored to create unforgettable
+                            African adventures.</p>
+                        <a href="#searchForm" class="btn btn-primary mr-3">Plan Your Safari</a>
+                        <a href="packages.html" class="btn btn-outline-light">View Packages</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Form -->
+        <div class="tm-section tm-bg-img" id="tm-section-1">
+            <div class="tm-bg ie-container-width-fix-2">
+                <div class="container ie-h-align-center-fix">
+                    <div class="row">
+                        <div class="col-xs-12 ml-auto mr-auto ie-container-width-fix">
+                            <form action="index.html" method="post" class="tm-search-form tm-section-pad-2"
+                                id="searchForm">
+                                <h2 class="section-title tm-color-black">Plan Your African Adventure</h2>
+                                <div class="form-row tm-search-form-row">
+                                    <div class="form-group tm-form-element tm-form-element-100">
+                                        <i class="fa fa-map-marker fa-2x tm-form-element-icon"></i>
+                                        <input name="country" type="text" class="form-control" id="inputCountry"
+                                            placeholder="COUNTRY FROM" required>
+                                    </div>
+                                    <div class="form-group tm-form-element tm-form-element-50">
+                                        <input name="fullName" type="text" class="form-control" id="fullName"
+                                            placeholder="FULL NAME" required>
+                                    </div>
+                                    <div class="form-group tm-form-element tm-form-element-50">
+                                        <input name="email" type="email" class="form-control" id="email"
+                                            placeholder="EMAIL" required>
+                                    </div>
+                                </div>
+                                <div class="form-group tm-form-element tm-form-element-100">
+                                    <label for="arrivalDate">EXPECTED ARRIVAL DATE</label>
+                                    <input name="arrivalDate" type="date" class="form-control" id="arrivalDate"
+                                        required>
+                                </div>
+                                <div class="form-group tm-form-element tm-form-element-100">
+                                    <label for="departureDate">EXPECTED DEPARTURE DATE</label>
+                                    <input name="departureDate" type="date" class="form-control" id="departureDate"
+                                        required>
+                                </div>
+                                <div class="form-row tm-search-form-row">
+                                    <div class="form-group tm-form-element tm-form-element-2">
+                                        <select name="adult" class="form-control tm-select" id="adult" required>
+                                            <option value="">Adult</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                        </select>
+                                        <i class="fa fa-2x fa-user tm-form-element-icon"></i>
+                                    </div>
+                                    <div class="form-group tm-form-element tm-form-element-2">
+                                        <select name="children" class="form-control tm-select" id="children" required>
+                                            <option value="">Children</option>
+                                            <option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                        </select>
+                                        <i class="fa fa-user tm-form-element-icon tm-form-element-icon-small"></i>
+                                    </div>
+                                    <div class="form-group tm-form-element tm-form-element-2">
+                                        <button type="submit" class="btn btn-primary tm-btn-search">MAKE A
+                                            REQUEST</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <section class="tm-section">
+            <div class="container">
+                <h2 class="section-title">Why Choose African Royalty Safaris</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="feature-box">
+                            <div class="feature-icon">
+                                <i class="fa fa-compass"></i>
+                            </div>
+                            <h3>Expert Guides</h3>
+                            <p>Our professional guides have extensive knowledge of Tanzania's wildlife, culture, and
+                                terrain to ensure your safety and enjoyment.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-box">
+                            <div class="feature-icon">
+                                <i class="fa fa-cogs"></i>
+                            </div>
+                            <h3>Customized Itineraries</h3>
+                            <p>We tailor every safari to match your interests, budget, and travel style for a truly
+                                personalized experience.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-box">
+                            <div class="feature-icon">
+                                <i class="fa fa-leaf"></i>
+                            </div>
+                            <h3>Sustainable Tourism</h3>
+                            <p>We're committed to responsible travel that supports local communities and conserves
+                                Tanzania's natural heritage.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Destinations -->
+        <section class="tm-section tm-bg-gray">
+            <div class="container">
+                <h2 class="section-title">Popular Destinations</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="destination-card">
+                            <img src="img/serengeti.jpg" alt="Serengeti National Park" class="destination-img">
+                            <div class="destination-content">
+                                <h3>Serengeti National Park</h3>
+                                <p>Witness the Great Migration and experience one of the world's most spectacular
+                                    wildlife displays.</p>
+                                <a href="Destination.html" class="btn btn-primary">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="destination-card">
+                            <img src="img/ngorongoro.jpg" alt="Ngorongoro Crater" class="destination-img">
+                            <div class="destination-content">
+                                <h3>Ngorongoro Crater</h3>
+                                <p>Explore the world's largest intact volcanic caldera, home to an incredible density of
+                                    wildlife.</p>
+                                <a href="Destination.html" class="btn btn-primary">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="destination-card">
+                            <img src="img/tarangire.jpg" alt="Tarangire National Park" class="destination-img">
+                            <div class="destination-content">
+                                <h3>Tarangire National Park</h3>
+                                <p>Marvel at ancient baobab trees and large elephant herds in this beautiful park.</p>
+                                <a href="Destination.html" class="btn btn-primary">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-3 col-sm-6">
+                        <span class="stat-number">15+</span>
+                        <p class="stat-text">Years of Experience</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <span class="stat-number">5000+</span>
+                        <p class="stat-text">Happy Travelers</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <span class="stat-number">12</span>
+                        <p class="stat-text">National Parks</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <span class="stat-number">98%</span>
+                        <p class="stat-text">Success Rate</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="tm-section">
+            <div class="container">
+                <h2 class="section-title">What Our Travelers Say</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"Our safari with African Royalty Safaris exceeded all
+                                expectations. The guides were knowledgeable, the accommodations luxurious, and the
+                                wildlife viewing spectacular."</p>
+                            <p class="testimonial-author">- Sarah Johnson, USA</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"Climbing Kilimanjaro was a lifelong dream, and African Royalty
+                                Safaris made it a reality. Their team was professional, supportive, and ensured our
+                                safety throughout the journey."</p>
+                            <p class="testimonial-author">- Michael Chen, Australia</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"The combination of safari and Zanzibar beach holiday was
+                                perfect. African Royalty Safaris created a seamless itinerary that balanced adventure
+                                with relaxation."</p>
+                            <p class="testimonial-author">- Emma & James Wilson, UK</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2>Ready for Your African Adventure?</h2>
+                        <p class="mb-4">Contact us today to start planning your dream safari</p>
+                        <a href="contact.html" class="btn btn-primary mr-3">Get in Touch</a>
+                        <a href="packages.html" class="btn btn-outline-light">View All Packages</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>African Royalty Safaris</h5>
+                        <p>Your gateway to unforgettable African adventures. Luxury safaris, Kilimanjaro climbs, and
+                            Zanzibar escapes.</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <h5>Quick Links</h5>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="packages.html">Packages</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h5>Destinations</h5>
+                        <ul class="footer-links">
+                            <li><a href="kilimanjaro.html">Mount Kilimanjaro</a></li>
+                            <li><a href="zanzibar.html">Zanzibar</a></li>
+                            <li><a href="Destination.html">Safari Destinations</a></li>
+                            <li><a href="packages.html">All Packages</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h5>Contact Us</h5>
+                        <ul class="footer-links">
+                            <li><i class="fa fa-phone"></i> +255 699 179 046</li>
+                            <li><i class="fa fa-envelope"></i> africanroyaltysafaris@gmail.com</li>
+                            <li><i class="fa fa-map-marker"></i> Arusha, Tanzania</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>Copyright &copy; <span class="tm-current-year">2025</span> African Royalty Safaris | All Rights
+                        Reserved</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/datepicker.min.js"></script>
+    <script src="js/jquery.singlePageNav.min.js"></script>
+    <script src="slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Navbar scroll effect
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 50) {
+                    $('#tm-top-bar').addClass('scrolled');
+                } else {
+                    $('#tm-top-bar').removeClass('scrolled');
+                }
+            });
+
+            // Form submission
+            $('#searchForm').on('submit', function (e) {
+                e.preventDefault();
+                alert('Thank you for your inquiry! We will contact you shortly to discuss your African adventure.');
+            });
+
+            $('#contactForm').on('submit', function (e) {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you soon.');
+            });
+
+            // Date picker
+            $('#arrivalDate, #departureDate').datepicker({
+                format: 'yyyy-mm-dd',
+                autoclose: true,
+                startDate: new Date()
+            });
+
+            // Smooth scrolling for anchor links
+            $('a[href*="#"]').on('click', function (e) {
+                e.preventDefault();
+
+                $('html, body').animate(
+                    {
+                        scrollTop: $($(this).attr('href')).offset().top - 100,
+                    },
+                    500,
+                    'linear'
+                );
+            });
+
+            // Close mobile menu when clicking on a link
+            $('.navbar-nav>li>a').on('click', function () {
+                $('.navbar-collapse').collapse('hide');
+            });
+        });
+    </script>
+</body>
+
+</html>
